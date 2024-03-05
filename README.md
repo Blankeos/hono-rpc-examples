@@ -12,3 +12,4 @@ Hono RPC is really cool. I want to replace tRPC with this because:
 
 - [next-app](/next-app/) - Next 14 App Router
 - [next-pages](/next-pages/) - Next 14 Pages Router
+- [react-codegen](/react-codegen/) - Separate Frontend Host and Backend Host. How do we share types? Codegen.
