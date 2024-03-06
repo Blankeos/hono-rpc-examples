@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "codegen": "tsc src/routes/_app.ts --declaration --emitDeclarationOnly --outDir ./types --skipLibCheck && dts-bundle --name HonoAPI --out hono.d.ts --main ./types/_app.d.ts",
+    "codegen": "tsc --project tsconfig.codegen.json --declaration --emitDeclarationOnly --outDir ./types --skipLibCheck && dts-bundle --name HonoAPI --out hono.d.ts --main ./types/_app.d.ts",
     "codegen:watch": "nodemon --watch src --ext ts --exec \"bun run codegen\"",
     "dev": "concurrently --names \"codegen,app\" \"bun run codegen:watch\" \"bun run --watch src/index.ts\""
   },
