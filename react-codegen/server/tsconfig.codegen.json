@@ -1,6 +1,0 @@
-{
-  // We have a custom tsconfig.json to be able to compile the baseUrl and paths.
-  "extends": "./tsconfig.json",
-  // We override the "include" field so we only compile the router.
-  "include": ["src/routes/_app.ts"]
-}

@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "codegen": "tsc --project tsconfig.codegen.json --declaration --emitDeclarationOnly --outDir ./types --skipLibCheck && dts-bundle --name HonoAPI --out hono.d.ts --main ./types/_app.d.ts",
-    "codegen:watch": "nodemon --watch src --ext ts --exec \"bun run codegen\"",
-    "dev": "concurrently --names \"codegen,app\" \"bun run codegen:watch\" \"bun run --watch src/index.ts\""
+    "typegen": "rollup --config typegen/rollup.config.cjs --bundleConfigAsCjs",
+    "typegen:watch": "nodemon --quiet --watch src --ext ts --exec 'bun run typegen'",
+    "dev": "concurrently --names 'types,app' 'bun run typegen:watch' 'bun run --watch src/index.ts'"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.1.11",
@@ -12,8 +12,8 @@
   "devDependencies": {
     "@types/bun": "latest",
     "concurrently": "^8.2.2",
-    "dts-bundle": "^0.7.3",
     "nodemon": "^3.1.0",
-    "typescript": "^5.3.3"
+    "rollup": "^4.13.0",
+    "rollup-plugin-dts": "^6.1.0"
   }
 }
