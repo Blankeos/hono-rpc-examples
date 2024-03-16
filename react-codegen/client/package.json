@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "sample": "source .env.example && echo \"$VITE_SERVER_URL\"",
-    "codegen": "source .env && curl -H \"Content-Type: text/plain\" ${VITE_SERVER_URL}/api/hono --output src/hono.d.ts",
+    "generate:api": "source .env && curl -H \"Content-Type: text/plain\" ${VITE_SERVER_URL}/api/hono --output src/hono-api.d.ts",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
